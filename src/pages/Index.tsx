@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navigation from "@/components/portfolio/Navigation";
 import Hero from "@/components/portfolio/Hero";
 import About from "@/components/portfolio/sections/About";
@@ -9,8 +10,19 @@ import Achievements from "@/components/portfolio/sections/Achievements";
 import Volunteership from "@/components/portfolio/sections/Volunteership";
 import Contact from "@/components/portfolio/sections/Contact";
 import Footer from "@/components/portfolio/Footer";
+import SignatureIntro from "@/components/portfolio/SignatureIntro";
 
 const Index = () => {
+  const [showIntro, setShowIntro] = useState(true);
+
+  const handleIntroComplete = () => {
+    setShowIntro(false);
+  };
+
+  if (showIntro) {
+    return <SignatureIntro onComplete={handleIntroComplete} />;
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />

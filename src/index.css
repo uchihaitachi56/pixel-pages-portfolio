@@ -10,55 +10,79 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dark Portfolio Theme */
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    /* Light Portfolio Theme */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-    --card: 240 10% 6%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 240 10% 6%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 263 70% 50%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 230 100% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 4% 16%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
 
-    --muted: 240 5% 14%;
-    --muted-foreground: 240 5% 64%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 263 70% 50%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 240 6% 20%;
-    --input: 240 6% 20%;
-    --ring: 263 70% 50%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 230 100% 55%;
 
     --radius: 0.75rem;
 
     /* Custom portfolio colors */
-    --gradient-primary: linear-gradient(135deg, hsl(263 70% 50%), hsl(293 69% 49%));
-    --gradient-secondary: linear-gradient(135deg, hsl(217 91% 59%), hsl(263 70% 50%));
-    --gradient-accent: linear-gradient(45deg, hsl(263 70% 50%), hsl(217 91% 59%), hsl(142 69% 58%));
+    --gradient-primary: linear-gradient(135deg, hsl(230 100% 55%), hsl(280 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(25 95% 53%), hsl(330 80% 85%));
+    --gradient-accent: linear-gradient(135deg, hsl(210 40% 98%), hsl(230 100% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(230 100% 98%), hsl(280 100% 98%));
     
-    --neon-purple: 263 70% 50%;
-    --neon-blue: 217 91% 59%;
-    --neon-green: 142 69% 58%;
-    --neon-pink: 293 69% 49%;
+    --signature-blue: 230 100% 55%;
+    --creative-purple: 280 100% 70%;
+    --accent-orange: 25 95% 53%;
+    --soft-pink: 330 80% 85%;
     
-    --glass-bg: hsla(240, 10%, 6%, 0.8);
-    --glass-border: hsla(240, 6%, 20%, 0.5);
+    --glass-bg: hsla(0, 0%, 100%, 0.8);
+    --glass-border: hsla(214, 32%, 91%, 0.5);
     
-    --shadow-glow: 0 0 20px hsla(263, 70%, 50%, 0.3);
-    --shadow-neon: 0 0 40px hsla(263, 70%, 50%, 0.5);
+    --shadow-glow: 0 10px 40px hsla(230, 100%, 55%, 0.15);
+    --shadow-card: 0 4px 20px hsla(230, 100%, 55%, 0.08);
+    --shadow-signature: 0 0 30px hsla(230, 100%, 55%, 0.3);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 230 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 5% 14%;
+    --muted-foreground: 240 5% 64%;
+    --accent: 263 70% 50%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 230 100% 55%;
   }
 }
 
@@ -92,7 +116,23 @@ All colors MUST be HSL.
 
   /* Glass morphism utilities */
   .glass {
-    @apply bg-glass-bg backdrop-blur-md border border-glass-border;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+  }
+
+  /* Signature animation */
+  .signature-path {
+    filter: drop-shadow(var(--shadow-signature));
+  }
+
+  .signature-path.complete {
+    animation: signature-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes signature-glow {
+    0%, 100% { filter: drop-shadow(var(--shadow-signature)); }
+    50% { filter: drop-shadow(0 0 20px hsl(var(--signature-blue))); }
   }
 
   /* Hover effects */

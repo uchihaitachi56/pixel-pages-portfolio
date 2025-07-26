@@ -4,7 +4,7 @@ import { Download, Mail } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-background to-card/30">
+    <section id="about" className="py-20 bg-gradient-accent">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -17,7 +17,7 @@ const About = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-slide-up">
-            <Card className="p-8 bg-card/80 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300">
+            <Card className="p-8 bg-card/90 backdrop-blur-sm border-border/50 hover:shadow-card transition-all duration-300">
               <h3 className="text-2xl font-semibold mb-4">Who I Am</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 I'm a creative developer and designer passionate about building innovative 
@@ -32,11 +32,11 @@ const About = () => {
               </p>
               
               <div className="flex gap-4">
-                <Button className="bg-gradient-primary hover:shadow-neon transition-all duration-300">
+                <Button className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-white">
                   <Download className="w-4 h-4 mr-2" />
                   Download CV
                 </Button>
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
                   <Mail className="w-4 h-4 mr-2" />
                   Contact Me
                 </Button>
@@ -68,7 +68,7 @@ const About = () => {
             { number: "20+", label: "Happy Clients" },
             { number: "100%", label: "Satisfaction Rate" }
           ].map((stat, index) => (
-            <Card key={index} className="p-6 text-center bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300 animate-slide-up" style={{animationDelay: `${index * 0.1 + 0.5}s`}}>
+            <Card key={index} className="p-6 text-center bg-card/80 backdrop-blur-sm border-border/50 hover:shadow-card transition-all duration-300 animate-slide-up" style={{animationDelay: `${index * 0.1 + 0.5}s`}}>
               <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
                 {stat.number}
               </div>
