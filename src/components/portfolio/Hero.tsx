@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import FloatingElements from "./3D/FloatingElements";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
@@ -25,13 +24,10 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* 3D Background Elements */}
-      <FloatingElements />
-      
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-hero">
-        <div className="absolute inset-0 opacity-30">
-          {[...Array(30)].map((_, i) => (
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background">
+        <div className="absolute inset-0 opacity-20">
+          {[...Array(50)].map((_, i) => (
             <div
               key={i}
               className="absolute w-1 h-1 bg-primary rounded-full animate-sparkle"
@@ -69,7 +65,7 @@ const Hero = () => {
           <div className="flex gap-6 justify-center mb-16">
             <Button 
               size="lg" 
-              className="bg-gradient-primary hover:shadow-glow transition-all duration-300 hover:scale-105 text-white"
+              className="bg-gradient-primary hover:shadow-neon transition-all duration-300 hover:scale-105"
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View My Work
@@ -77,7 +73,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Get In Touch
