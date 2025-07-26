@@ -1,25 +1,19 @@
 import { useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Text3D, Center, OrbitControls, Float } from "@react-three/drei";
+import { Text, Center, OrbitControls, Float } from "@react-three/drei";
 
 const Signature3D = () => {
   return (
     <Float speed={2} rotationIntensity={0.1} floatIntensity={0.5}>
       <Center>
-        <Text3D
-          font="/fonts/signature.json"
-          size={1.5}
-          height={0.1}
-          curveSegments={12}
-          bevelEnabled
-          bevelThickness={0.02}
-          bevelSize={0.02}
-          bevelOffset={0}
-          bevelSegments={5}
+        <Text
+          fontSize={1.5}
+          color="#3b82f6"
+          anchorX="center"
+          anchorY="middle"
         >
-          John Doe
-          <meshStandardMaterial color="#3b82f6" />
-        </Text3D>
+          Your Name
+        </Text>
       </Center>
     </Float>
   );
