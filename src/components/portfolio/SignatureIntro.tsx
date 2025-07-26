@@ -1,28 +1,9 @@
 import { useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Text, Center, OrbitControls, Float } from "@react-three/drei";
-
-const Signature3D = () => {
-  return (
-    <Float speed={2} rotationIntensity={0.1} floatIntensity={0.5}>
-      <Center>
-        <Text
-          fontSize={1.5}
-          color="#3b82f6"
-          anchorX="center"
-          anchorY="middle"
-        >
-          Your Name
-        </Text>
-      </Center>
-    </Float>
-  );
-};
 
 const SignatureIntro = ({ onComplete }: { onComplete: () => void }) => {
   const [showSignature, setShowSignature] = useState(false);
   const [signatureComplete, setSignatureComplete] = useState(false);
-  const [show3D, setShow3D] = useState(false);
+  const [showName, setShowName] = useState(false);
 
   useEffect(() => {
     // Start signature animation
@@ -32,7 +13,7 @@ const SignatureIntro = ({ onComplete }: { onComplete: () => void }) => {
     const timer2 = setTimeout(() => setSignatureComplete(true), 3000);
     
     // Show 3D name
-    const timer3 = setTimeout(() => setShow3D(true), 3500);
+    const timer3 = setTimeout(() => setShowName(true), 3500);
     
     // Transition to main portfolio
     const timer4 = setTimeout(() => onComplete(), 6000);
@@ -46,7 +27,7 @@ const SignatureIntro = ({ onComplete }: { onComplete: () => void }) => {
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-gradient-hero flex items-center justify-center">
+    <div className="fixed inset-0 z-50 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center">
       {/* Signature Animation */}
       <div className="text-center">
         {showSignature && (
@@ -76,15 +57,12 @@ const SignatureIntro = ({ onComplete }: { onComplete: () => void }) => {
           </div>
         )}
 
-        {/* 3D Name */}
-        {show3D && (
-          <div className="h-40 animate-fade-in">
-            <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
-              <ambientLight intensity={0.5} />
-              <pointLight position={[10, 10, 10]} />
-              <Signature3D />
-              <OrbitControls enableZoom={false} enablePan={false} />
-            </Canvas>
+        {/* Animated Name */}
+        {showName && (
+          <div className="animate-fade-in">
+            <h1 className="text-6xl font-bold text-primary mb-4 animate-glow">
+              Your Name
+            </h1>
           </div>
         )}
 
