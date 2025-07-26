@@ -10,24 +10,24 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Improved Light Portfolio Theme */
-    --background: 220 15% 97%;
-    --foreground: 240 10% 8%;
+    /* Light Portfolio Theme */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 8%;
+    --card-foreground: 240 10% 3.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 8%;
+    --popover-foreground: 240 10% 3.9%;
 
     --primary: 263 70% 50%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 240 10% 8%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 240 10% 3.9%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 240 10% 35%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 240 5% 64%;
 
     --accent: 263 70% 50%;
     --accent-foreground: 0 0% 98%;
@@ -35,8 +35,8 @@ All colors MUST be HSL.
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
     --ring: 263 70% 50%;
 
     --radius: 0.75rem;
@@ -51,11 +51,11 @@ All colors MUST be HSL.
     --neon-green: 142 69% 58%;
     --neon-pink: 293 69% 49%;
     
-    --glass-bg: hsla(0, 0%, 100%, 0.7);
-    --glass-border: hsla(220, 13%, 91%, 0.8);
+    --glass-bg: hsla(0, 0%, 100%, 0.8);
+    --glass-border: hsla(214, 32%, 91%, 0.5);
     
-    --shadow-glow: 0 0 20px hsla(263, 70%, 50%, 0.15);
-    --shadow-neon: 0 0 40px hsla(263, 70%, 50%, 0.25);
+    --shadow-glow: 0 0 20px hsla(263, 70%, 50%, 0.3);
+    --shadow-neon: 0 0 40px hsla(263, 70%, 50%, 0.5);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
