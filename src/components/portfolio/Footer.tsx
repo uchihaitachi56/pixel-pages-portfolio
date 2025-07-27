@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="text-muted-foreground flex items-center gap-2">
-              Made with <Heart className="w-4 h-4 text-red-500 animate-pulse" /> by John Doe
+              Made by Bhavesh Goyal
             </p>
             <p className="text-sm text-muted-foreground">
               © {currentYear} All rights reserved.
