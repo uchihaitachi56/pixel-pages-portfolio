@@ -5,7 +5,17 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showSignature, setShowSignature] = useState(false);
   const fullText = "Creative Developer & Designer";
+
+  useEffect(() => {
+    // Show signature animation on mount
+    const signatureTimer = setTimeout(() => {
+      setShowSignature(true);
+    }, 500);
+
+    return () => clearTimeout(signatureTimer);
+  }, []);
 
   useEffect(() => {
     if (currentIndex < fullText.length) {
@@ -44,11 +54,33 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="animate-slide-up">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
-              John Doe
-            </span>
-          </h1>
+          {/* Signature Animation */}
+          <div className="mb-8 relative h-32 flex items-center justify-center">
+            {showSignature && (
+              <div className="relative">
+                {/* SVG signature path animation */}
+                <svg 
+                  width="400" 
+                  height="120" 
+                  viewBox="0 0 400 120" 
+                  className="absolute inset-0"
+                >
+                  <path
+                    d="M 20 80 Q 40 20 80 60 Q 100 80 120 40 Q 140 20 160 60 Q 180 80 200 50 Q 220 30 240 70 Q 260 90 280 50 Q 300 20 320 60 Q 340 80 360 40"
+                    stroke="hsl(var(--primary))"
+                    strokeWidth="3"
+                    fill="none"
+                    className="signature-writing"
+                  />
+                </svg>
+                
+                {/* Actual text that appears after animation */}
+                <h1 className="signature-text text-5xl md:text-7xl font-bold relative z-10">
+                  Bhavesh Goyal
+                </h1>
+              </div>
+            )}
+          </div>
           
           <div className="text-2xl md:text-3xl mb-8 h-12 flex items-center justify-center">
             <span className="font-mono text-muted-foreground">
