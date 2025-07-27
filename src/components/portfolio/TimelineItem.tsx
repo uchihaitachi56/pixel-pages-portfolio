@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 interface TimelineItemProps {
   title: string;
   company: string;
+  location?: string;
   period: string;
   description: string;
   skills?: string[];
@@ -11,7 +12,7 @@ interface TimelineItemProps {
   index: number;
 }
 
-const TimelineItem = ({ title, company, period, description, skills, type, index }: TimelineItemProps) => {
+const TimelineItem = ({ title, company, location, period, description, skills, type, index }: TimelineItemProps) => {
   return (
     <div className="relative flex items-center mb-12 animate-slide-up" style={{animationDelay: `${index * 0.2}s`}}>
       {/* Timeline Line */}
@@ -36,15 +37,21 @@ const TimelineItem = ({ title, company, period, description, skills, type, index
           <div>
             <h3 className="text-xl font-semibold mb-1">{title}</h3>
             <h4 className="text-primary font-medium">{company}</h4>
+            {location && (
+              <p className="text-sm text-muted-foreground mt-1">{location}</p>
+            )}
           </div>
           <Badge variant="outline" className="w-fit mt-2 md:mt-0">
             {period}
           </Badge>
         </div>
         
-        <p className="text-muted-foreground mb-4 leading-relaxed">
-          {description}
-        </p>
+        <div 
+          className="text-muted-foreground mb-4 leading-relaxed"
+          dangerouslySetInnerHTML={{ 
+            __html: description.replace(/\n/g, '<br/>') 
+          }}
+        />
         
         {skills && skills.length > 0 && (
           <div className="flex flex-wrap gap-2">

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const fullText = "Creative Developer & Designer";
+  const fullText = "Software Engineer & AI Developer";
 
   useEffect(() => {
     if (currentIndex < fullText.length) {
@@ -46,7 +46,7 @@ const Hero = () => {
         <div className="animate-slide-up">
           <h1 className="text-6xl md:text-8xl font-bold mb-6">
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              John Doe
+              Bhavesh Goyal
             </span>
           </h1>
           
@@ -58,8 +58,7 @@ const Hero = () => {
           </div>
 
           <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Passionate about creating digital experiences that blend creativity with 
-            cutting-edge technology. I craft solutions that are both beautiful and functional.
+            Passionate about solving complex problems with clean code and smart algorithms. I turn ideas into scalable solutions using AI, data science, and modern development practices.
           </p>
 
           <div className="flex gap-6 justify-center mb-16">

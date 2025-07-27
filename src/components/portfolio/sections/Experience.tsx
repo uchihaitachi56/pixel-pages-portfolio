@@ -3,37 +3,23 @@ import TimelineItem from "../TimelineItem";
 const Experience = () => {
   const experiences = [
     {
-      title: "Senior Full Stack Developer",
-      company: "TechCorp Solutions",
-      period: "2022 - Present",
-      description: "Leading development of enterprise-level applications, mentoring junior developers, and architecting scalable solutions. Responsible for full-stack development using modern technologies and best practices.",
-      skills: ["React", "Node.js", "TypeScript", "AWS", "PostgreSQL", "Team Leadership"],
+      title: "Software Developer Intern",
+      company: "Otsuka Corporation",
+      location: "Tokyo, Japan",
+      period: "May 2025 - July 2025",
+      description: "Architected an AI-powered B2B Sales Automation Platform capable of intelligent customer interactions, automated quote generation, and advanced product search capabilities using FastAPI, PostgreSQL, and Elasticsearch.\n<strong>Key Features:</strong>\n• Intelligent AI service factory with Azure OpenAI and HuggingFace integration\n• Conversational agents for automated quotes and product search\n• Live configuration system with admin UI for persona customization\n• Complete deployment pipeline with Docker, Nginx, CircleCI on Azure VMs\n• Comprehensive monitoring via Grafana and Kibana",
+      skills: ["FastAPI", "PostgreSQL", "Elasticsearch", "Azure OpenAI", "HuggingFace", "NLP", "Docker", "Nginx", "CircleCI", "Azure VMs", "Grafana", "Kibana"],
       type: "work" as const
     },
     {
-      title: "Frontend Developer",
-      company: "Digital Innovations Inc.",
-      period: "2020 - 2022",
-      description: "Developed responsive web applications with focus on user experience and performance optimization. Collaborated with design teams to implement pixel-perfect UI components and interactive features.",
-      skills: ["React", "JavaScript", "CSS", "Redux", "REST APIs", "Git"],
+      title: "Inter IIT Tech Meet",
+      company: "Zelta Labs",
+      location: "Remote",
+      period: "Oct 2023 - Dec 2023",
+      description: "Developed sophisticated algorithmic trading strategies capable of cryptocurrency profit prediction across multiple timeframes, integrating advanced sentiment analysis for enhanced market decision-making.\n<strong>Key Features:</strong>\n• 3 trading strategies optimized for 15-min, 4-hour, and 8-hour timeframes\n• Multi-cryptocurrency support (Ethereum, Bitcoin, Dogecoin, Matic)\n• Sentiment analysis with fear-greed indices and market psychology\n• Systematic backtesting achieving 32-fold profit amplification",
+      skills: ["Python", "Algorithmic Trading", "Cryptocurrency Analysis", "Sentiment Analysis", "Backtesting", "Market Psychology", "Data Analysis"],
       type: "work" as const
     },
-    {
-      title: "Junior Web Developer",
-      company: "StartupHub",
-      period: "2019 - 2020",
-      description: "Built and maintained multiple client websites and web applications. Gained experience in full-stack development and learned to work in agile development environments.",
-      skills: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "WordPress"],
-      type: "work" as const
-    },
-    {
-      title: "Freelance Developer",
-      company: "Self-Employed",
-      period: "2018 - 2019",
-      description: "Provided web development services to small businesses and startups. Handled everything from initial consultation to deployment and maintenance of web solutions.",
-      skills: ["Web Development", "Client Communication", "Project Management"],
-      type: "work" as const
-    }
   ];
 
   return (
@@ -54,6 +40,7 @@ const Experience = () => {
               key={index}
               title={experience.title}
               company={experience.company}
+              location={experience.location}
               period={experience.period}
               description={experience.description}
               skills={experience.skills}

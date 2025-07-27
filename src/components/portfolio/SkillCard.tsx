@@ -36,11 +36,8 @@ const SkillCard = ({ skill, index }: SkillCardProps) => {
             value={isHovered ? skill.level : 0} 
             className="h-2 transition-all duration-1000"
           />
-          <div className="text-sm text-muted-foreground mt-1 flex justify-between">
+          <div className="text-sm text-muted-foreground mt-1">
             <span>Proficiency</span>
-            <span className={`transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-              {skill.level}%
-            </span>
           </div>
         </div>
       </div>
