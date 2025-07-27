@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,23 +10,23 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Light Portfolio Theme - Softer */
-    --background: 0 0% 97%;
-    --foreground: 240 10% 15%;
+    /* Improved Light Portfolio Theme */
+    --background: 220 15% 97%;
+    --foreground: 240 10% 8%;
 
-    --card: 0 0% 98%;
-    --card-foreground: 240 10% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 8%;
 
-    --popover: 0 0% 98%;
-    --popover-foreground: 240 10% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 8%;
 
     --primary: 263 70% 50%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 20% 94%;
-    --secondary-foreground: 240 10% 20%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 240 10% 8%;
 
-    --muted: 210 20% 92%;
+    --muted: 220 14% 96%;
     --muted-foreground: 240 10% 35%;
 
     --accent: 263 70% 50%;
@@ -35,8 +35,8 @@ All colors MUST be HSL.
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
     --ring: 263 70% 50%;
 
     --radius: 0.75rem;
@@ -51,11 +51,11 @@ All colors MUST be HSL.
     --neon-green: 142 69% 58%;
     --neon-pink: 293 69% 49%;
     
-    --glass-bg: hsla(0, 0%, 100%, 0.8);
-    --glass-border: hsla(214, 32%, 91%, 0.5);
+    --glass-bg: hsla(0, 0%, 100%, 0.7);
+    --glass-border: hsla(220, 13%, 91%, 0.8);
     
-    --shadow-glow: 0 0 20px hsla(263, 70%, 50%, 0.3);
-    --shadow-neon: 0 0 40px hsla(263, 70%, 50%, 0.5);
+    --shadow-glow: 0 0 20px hsla(263, 70%, 50%, 0.15);
+    --shadow-neon: 0 0 40px hsla(263, 70%, 50%, 0.25);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -106,44 +106,5 @@ All colors MUST be HSL.
     border-right: 2px solid hsl(var(--primary));
     white-space: nowrap;
     animation: typing 3.5s steps(40, end), blink .75s step-end infinite;
-  }
-
-  /* Signature writing animation */
-  .signature-writing {
-    font-family: 'Brush Script MT', cursive;
-    font-size: 4rem;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: write-signature 3s ease-in-out forwards;
-  }
-
-  @keyframes write-signature {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-
-  .signature-text {
-    font-family: 'Brush Script MT', 'Dancing Script', cursive;
-    background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: signature-reveal 3s ease-in-out forwards;
-    opacity: 0;
-  }
-
-  @keyframes signature-reveal {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    70% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 }
