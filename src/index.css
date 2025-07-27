@@ -107,4 +107,24 @@ All colors MUST be HSL.
     white-space: nowrap;
     animation: typing 3.5s steps(40, end), blink .75s step-end infinite;
   }
+
+  /* Signature animation */
+  .signature-path {
+    animation: drawSignature 2s ease-in-out forwards;
+  }
+
+  @keyframes drawSignature {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  .animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+  }
 }
