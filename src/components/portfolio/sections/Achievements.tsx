@@ -6,51 +6,68 @@ const Achievements = () => {
   const achievements = [
     {
       icon: <Trophy className="w-8 h-8" />,
-      title: "Best Innovation Award",
-      organization: "TechCorp Solutions",
+      title: "NASA SpaceApps Hackathon",
+      organization: "NASA SpaceApps Challenge",
       year: "2023",
-      description: "Recognized for developing an AI-powered solution that improved customer satisfaction by 40% and reduced response time by 60%.",
-      type: "award"
-    },
-    {
-      icon: <Award className="w-8 h-8" />,
-      title: "Hackathon Winner",
-      organization: "Silicon Valley Tech Challenge",
-      year: "2022",
-      description: "First place winner in a 48-hour hackathon with over 200 participants. Built a sustainable energy management platform.",
+      highlight: "🏆 Global Runner-up & Regional Winner",
+      description: (
+        <>
+          Recognized as <span className="font-semibold text-foreground">Global Runner-up</span> and <span className="font-semibold text-foreground">Regional Winner</span> in GeoAI Reimagined Challenge, surpassing 155,000 worldwide participants through pioneering geospatial analysis models.
+        </>
+      ),
       type: "competition"
     },
     {
+      icon: <Award className="w-8 h-8" />,
+      title: "Amazon ML Challenge",
+      organization: "Amazon",
+      year: "2024",
+      highlight: "🥇 AIR-67 out of 75,000+",
+      description: (
+        <>
+          Secured <span className="font-semibold text-foreground">AIR-67</span> ranking among 75,000 participants across India in the Amazon Machine Learning Challenge.
+        </>
+      ),
+      type: "award"
+    },
+    {
       icon: <Star className="w-8 h-8" />,
-      title: "Employee of the Year",
-      organization: "Digital Innovations Inc.",
-      year: "2021",
-      description: "Selected from 500+ employees for exceptional performance, leadership, and contribution to team success.",
-      type: "recognition"
+      title: "SWE Job Simulation",
+      organization: "J.P. Morgan Chase & Co",
+      year: "2024",
+      highlight: "💻 Practical Experience",
+      description: (
+        <>
+          Completed an online <span className="font-semibold text-foreground">Software Engineering Job Simulation</span> by Forage, demonstrating practical skills in financial technology solutions.
+        </>
+      ),
+      type: "program"
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: "Open Source Contributor",
-      organization: "GitHub",
-      year: "2020-2023",
-      description: "Active contributor to popular open source projects with 1000+ stars and contributions to React, Node.js, and TypeScript ecosystems.",
+      title: "Inter IIT Tech Meet 12.0",
+      organization: "IIT Madras",
+      year: "2023",
+      highlight: "🎯 Institute Representation",
+      description: (
+        <>
+          Represented the institute at <span className="font-semibold text-foreground">Inter IIT Tech Meet 12.0</span>, hosted at IIT Madras, competing with top technical institutes across India.
+        </>
+      ),
       type: "contribution"
     },
     {
       icon: <Trophy className="w-8 h-8" />,
-      title: "Top 1% Developer",
-      organization: "Stack Overflow",
+      title: "JEE Advanced 2022",
+      organization: "National Testing Agency",
       year: "2022",
-      description: "Ranked in the top 1% of Stack Overflow contributors with 50K+ reputation points and 200+ answered questions.",
+      highlight: "🎖️ AIR 3884",
+      description: (
+        <>
+          Achieved <span className="font-semibold text-foreground">All India Rank 3884</span> in JEE Advanced 2022, securing admission to one of India's premier engineering institutes.
+        </>
+      ),
       type: "recognition"
-    },
-    {
-      icon: <Award className="w-8 h-8" />,
-      title: "Google Summer of Code",
-      organization: "Google",
-      year: "2019",
-      description: "Selected participant in Google Summer of Code program, contributing to a machine learning framework used by thousands of developers.",
-      type: "program"
     }
   ];
 
@@ -79,10 +96,10 @@ const Achievements = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {achievements.map((achievement, index) => (
-            <Card 
+            <Card
               key={index}
               className="p-6 bg-card/80 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300 hover:scale-105 group animate-slide-up"
-              style={{animationDelay: `${index * 0.1}s`}}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className={`p-3 rounded-lg ${getTypeColor(achievement.type)} text-white group-hover:scale-110 transition-transform duration-300`}>
@@ -91,41 +108,21 @@ const Achievements = () => {
                 <div className="flex-1">
                   <h3 className="font-semibold text-lg mb-1">{achievement.title}</h3>
                   <p className="text-primary text-sm mb-1">{achievement.organization}</p>
-                  <Badge variant="outline" className="text-xs">
-                    {achievement.year}
-                  </Badge>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <Badge variant="outline" className="text-xs">
+                      {achievement.year}
+                    </Badge>
+                    {achievement.highlight && (
+                      <span className="text-xs bg-yellow-400/90 text-black px-2 py-1 rounded-md font-semibold shadow-inner ring-1 ring-yellow-500/40">
+                        {achievement.highlight}
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
-              
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {achievement.description}
               </p>
-            </Card>
-          ))}
-        </div>
-
-        {/* Statistics */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { number: "15+", label: "Awards Won", icon: "🏆" },
-            { number: "3", label: "Hackathons Won", icon: "💻" },
-            { number: "50K+", label: "GitHub Stars", icon: "⭐" },
-            { number: "10K+", label: "Lines of Code", icon: "📝" }
-          ].map((stat, index) => (
-            <Card 
-              key={index} 
-              className="p-6 text-center bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300 animate-slide-up group"
-              style={{animationDelay: `${index * 0.1 + 0.5}s`}}
-            >
-              <div className="text-3xl mb-2 group-hover:animate-bounce">
-                {stat.icon}
-              </div>
-              <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-1">
-                {stat.number}
-              </div>
-              <div className="text-muted-foreground text-sm">
-                {stat.label}
-              </div>
             </Card>
           ))}
         </div>

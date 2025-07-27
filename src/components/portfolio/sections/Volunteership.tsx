@@ -1,113 +1,169 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Users, Code, Lightbulb } from "lucide-react";
+import { Users, Code, Trophy, DollarSign, Wrench, Calendar, Palette } from "lucide-react";
 
 const Volunteership = () => {
-  const volunteerWork = [
+  const positionsOfResponsibility = [
     {
       icon: <Code className="w-6 h-6" />,
-      title: "Code for Good Mentor",
-      organization: "TechForGood Foundation",
-      period: "2021 - Present",
-      description: "Mentoring aspiring developers from underrepresented communities. Helping them build their first applications and prepare for tech interviews. Over 50 mentees successfully placed in tech roles.",
-      impact: "50+ Developers Mentored",
-      skills: ["Mentoring", "Technical Training", "Career Guidance"]
+      title: "Startup Head",
+      organization: "Entrepreneurship Cell, IIT Mandi",
+      period: "Sep 2024 - Present",
+      description: "Leading startup initiatives and fostering entrepreneurial culture among students. Organizing startup events, workshops, and mentorship programs to encourage innovation and business development within the campus community.",
+      impact: "Active Leadership Role",
+      skills: ["Leadership", "Startup Ecosystem", "Event Management", "Team Building"]
     },
     {
-      icon: <Users className="w-6 h-6" />,
-      title: "Youth Programming Instructor",
-      organization: "Local Community Center",
-      period: "2020 - 2022",
-      description: "Teaching programming fundamentals to teenagers from low-income families. Designed curriculum covering HTML, CSS, JavaScript, and basic computer science concepts. Created a pathway for students to pursue tech careers.",
-      impact: "100+ Students Taught",
-      skills: ["Teaching", "Curriculum Design", "Youth Development"]
+      icon: <Wrench className="w-6 h-6" />,
+      title: "Hostel Maintenance Coordinator",
+      organization: "IIT Mandi",
+      period: "Oct 2023 - May 2024",
+      description: "Coordinated maintenance activities and infrastructure improvements across hostel facilities. Managed student grievances, liaised with maintenance staff, and ensured optimal living conditions for residents.",
+      impact: "Campus Infrastructure Management",
+      skills: ["Project Management", "Problem Solving", "Communication", "Operations"]
     },
     {
-      icon: <Lightbulb className="w-6 h-6" />,
-      title: "Tech Workshop Organizer",
-      organization: "Women in Tech Society",
-      period: "2019 - Present",
-      description: "Organizing monthly workshops on emerging technologies for women entering the tech field. Topics include AI/ML basics, cloud computing, and modern web development. Building an inclusive tech community.",
-      impact: "500+ Workshop Attendees",
-      skills: ["Event Planning", "Public Speaking", "Community Building"]
+      icon: <Calendar className="w-6 h-6" />,
+      title: "Event Head",
+      organization: "Exodia'23, Cultural Festival of IIT Mandi",
+      period: "Mar 2024 - May 2024",
+      description: "Led event planning and execution for one of the major cultural festivals at IIT Mandi. Managed multiple event categories, coordinated with various teams, and ensured successful delivery of cultural programs.",
+      impact: "Major Festival Leadership",
+      skills: ["Event Planning", "Team Coordination", "Budget Management", "Creative Direction"]
     },
     {
-      icon: <Heart className="w-6 h-6" />,
-      title: "Digital Literacy Volunteer",
-      organization: "Senior Citizens Tech Help",
-      period: "2018 - 2020",
-      description: "Helping senior citizens learn to use smartphones, computers, and internet services. Focus on staying connected with family, online banking security, and accessing digital services safely.",
-      impact: "200+ Seniors Helped",
-      skills: ["Digital Literacy", "Patient Teaching", "Technology Support"]
+      icon: <DollarSign className="w-6 h-6" />,
+      title: "Head of Sponsorship",
+      organization: "Himalayan Startup Trek'23",
+      period: "Sep 2023 - Oct 2023",
+      description: "Secured sponsorships and partnerships for the flagship startup event. Developed sponsor relationships, negotiated deals, and managed sponsor deliverables to ensure successful event funding.",
+      impact: "Successful Event Funding",
+      skills: ["Business Development", "Negotiation", "Relationship Management", "Sales"]
+    },
+    {
+      icon: <Palette className="w-6 h-6" />,
+      title: "Core Team Member",
+      organization: "Designauts (Design Club IIT Mandi)",
+      period: "May 2023 - Dec 2024",
+      description: "Active member of the design community at IIT Mandi, contributing to various design projects and initiatives. Participated in design workshops, competitions, and collaborative projects to promote design thinking on campus.",
+      impact: "Design Community Contribution",
+      skills: ["Design Thinking", "Creative Collaboration", "Workshop Organization", "Community Building"]
+    },
+    {
+      icon: <Trophy className="w-6 h-6" />,
+      title: "Event Coordinator",
+      organization: "Ranneeti - Sports Fest IIT Mandi",
+      period: "Oct 2022",
+      description: "Coordinated sporting events and activities during the annual sports festival. Managed event logistics, participant registration, and ensured smooth execution of various sports competitions and tournaments.",
+      impact: "Sports Festival Coordination",
+      skills: ["Sports Management", "Event Coordination", "Logistics", "Team Work"]
     }
   ];
 
-  const causes = [
+  const awardsAchievements = [
     {
-      name: "Education Equality",
-      description: "Supporting access to quality tech education for all",
-      color: "from-blue-400 to-cyan-400"
+      title: "Leadership Excellence",
+      description: "Recognized for outstanding leadership in multiple student organizations",
+      icon: "🏆"
     },
     {
-      name: "Digital Inclusion",
-      description: "Bridging the digital divide in underserved communities",
-      color: "from-green-400 to-emerald-400"
+      title: "Event Management",
+      description: "Successfully managed large-scale campus events and festivals",
+      icon: "🎯"
     },
     {
-      name: "Women in Tech",
-      description: "Promoting gender diversity in technology fields",
-      color: "from-purple-400 to-pink-400"
-    },
-    {
-      name: "Open Source",
-      description: "Contributing to free and open-source software",
-      color: "from-orange-400 to-red-400"
+      title: "Community Impact",
+      description: "Made significant contributions to campus life and student experience",
+      icon: "⭐"
     }
   ];
+
+  // Floating elements animation - positioned more strategically
+  const FloatingElements = () => {
+    const elements = [
+      { icon: "🚀", left: "15%", top: "20%", delay: 0, duration: 3 },
+      { icon: "🎨", left: "75%", top: "15%", delay: 1, duration: 4 },
+      { icon: "🏆", left: "85%", top: "60%", delay: 2, duration: 3.5 },
+      { icon: "🤝", left: "10%", top: "70%", delay: 0.5, duration: 3.2 },
+      { icon: "💡", left: "60%", top: "80%", delay: 1.5, duration: 3.8 }
+    ];
+
+    return (
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {elements.map((elem, i) => (
+          <div
+            key={i}
+            className="absolute text-2xl opacity-10 animate-float"
+            style={{
+              left: elem.left,
+              top: elem.top,
+              animationDelay: `${elem.delay}s`,
+              animationDuration: `${elem.duration}s`
+            }}
+          >
+            {elem.icon}
+          </div>
+        ))}
+      </div>
+    );
+  };
 
   return (
-    <section id="volunteership" className="py-20 bg-gradient-to-br from-background to-card/30">
-      <div className="container mx-auto px-6">
+    <section id="volunteership" className="py-20 bg-gradient-to-br from-background to-card/30 relative">
+      <FloatingElements />
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
+          <div className="inline-block p-4 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 mb-6 animate-pulse">
+            <Users className="w-12 h-12 text-primary" />
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Community & <span className="bg-gradient-primary bg-clip-text text-transparent">Volunteership</span>
+            Positions of <span className="text-primary">Responsibility</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Giving back to the community and making technology accessible to everyone
+            Leadership roles and contributions to campus life and community development
           </p>
         </div>
 
-        {/* Volunteer Work */}
+        {/* Positions of Responsibility */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          {volunteerWork.map((work, index) => (
+          {positionsOfResponsibility.map((position, index) => (
             <Card 
               key={index}
-              className="p-6 bg-card/80 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300 hover:scale-105 animate-slide-up"
-              style={{animationDelay: `${index * 0.2}s`}}
+              className="group p-6 bg-card/80 backdrop-blur-sm border-border/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:scale-[1.02] animate-slide-up relative overflow-hidden"
+              style={{animationDelay: `${index * 0.15}s`}}
             >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 rounded-lg bg-gradient-primary text-white">
-                  {work.icon}
+              {/* Background gradient effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-secondary/3 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="flex items-start gap-4 mb-4 relative z-10">
+                <div className="p-3 rounded-xl bg-gradient-to-br from-primary to-secondary text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  {position.icon}
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-lg mb-1">{work.title}</h3>
-                  <p className="text-primary text-sm mb-1">{work.organization}</p>
-                  <Badge variant="outline" className="text-xs mb-2">
-                    {work.period}
+                  <h3 className="font-bold text-lg mb-1 group-hover:text-primary transition-colors duration-300">{position.title}</h3>
+                  <p className="text-primary text-sm mb-1 font-medium">{position.organization}</p>
+                  <Badge variant="outline" className="text-xs mb-2 border-primary/30 text-primary/80">
+                    {position.period}
                   </Badge>
-                  <div className="text-neon-green text-sm font-medium mb-2">
-                    {work.impact}
+                  <div className="text-emerald-500 text-sm font-semibold mb-2 flex items-center gap-1">
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                    {position.impact}
                   </div>
                 </div>
               </div>
               
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                {work.description}
+              <p className="text-muted-foreground text-sm leading-relaxed mb-4 relative z-10">
+                {position.description}
               </p>
 
-              <div className="flex flex-wrap gap-2">
-                {work.skills.map((skill, i) => (
-                  <Badge key={i} variant="secondary" className="text-xs">
+              <div className="flex flex-wrap gap-2 relative z-10">
+                {position.skills.map((skill, i) => (
+                  <Badge 
+                    key={i} 
+                    variant="secondary" 
+                    className="text-xs hover:bg-primary/20 transition-colors duration-200 cursor-default"
+                  >
                     {skill}
                   </Badge>
                 ))}
@@ -116,45 +172,65 @@ const Volunteership = () => {
           ))}
         </div>
 
-        {/* Causes I Support */}
+        {/* Awards and Achievements Section */}
         <div className="text-center mb-12">
-          <h3 className="text-2xl font-semibold mb-8">Causes I Support</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {causes.map((cause, index) => (
+          <h3 className="text-3xl font-bold mb-2 text-primary">
+            Awards & Achievements
+          </h3>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8 rounded-full" />
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {awardsAchievements.map((award, index) => (
               <Card
                 key={index}
-                className="p-6 text-center bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-glow transition-all duration-300 hover:scale-105 animate-slide-up"
+                className="group p-6 text-center bg-card/60 backdrop-blur-sm border-border/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:scale-105 animate-slide-up relative overflow-hidden"
                 style={{animationDelay: `${index * 0.1 + 0.8}s`}}
               >
-                <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${cause.color} flex items-center justify-center text-white text-2xl`}>
-                  ❤️
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="text-4xl mb-4 group-hover:scale-125 transition-transform duration-300 relative z-10">
+                  {award.icon}
                 </div>
-                <h4 className="font-semibold mb-2">{cause.name}</h4>
-                <p className="text-muted-foreground text-sm">
-                  {cause.description}
+                <h4 className="font-bold mb-2 text-lg group-hover:text-primary transition-colors duration-300 relative z-10">
+                  {award.title}
+                </h4>
+                <p className="text-muted-foreground text-sm relative z-10">
+                  {award.description}
                 </p>
+                
+                {/* Subtle glow effect */}
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r from-primary to-secondary blur-xl" />
               </Card>
             ))}
           </div>
         </div>
-
-        {/* Call to Action */}
-        <Card className="p-8 text-center bg-gradient-primary/10 border-primary/20 animate-slide-up" style={{animationDelay: "1.2s"}}>
-          <h3 className="text-2xl font-semibold mb-4">Want to Collaborate on a Good Cause?</h3>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            I'm always looking for opportunities to use technology for social good. 
-            If you have a project that can make a positive impact, let's connect!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Badge className="bg-gradient-primary text-lg py-2 px-4">
-              📧 volunteer@example.com
-            </Badge>
-            <Badge className="bg-gradient-secondary text-lg py-2 px-4">
-              🤝 Open to Pro Bono Work
-            </Badge>
-          </div>
-        </Card>
       </div>
+
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          25% { transform: translateY(-10px) rotate(5deg); }
+          50% { transform: translateY(-5px) rotate(-5deg); }
+          75% { transform: translateY(-8px) rotate(3deg); }
+        }
+        
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-slide-up {
+          opacity: 0;
+          transform: translateY(30px);
+          animation: slideUp 0.8s ease-out forwards;
+        }
+        
+        @keyframes slideUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </section>
   );
 };

@@ -7,64 +7,34 @@ const Projects = () => {
   
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with modern UI and seamless user experience",
-      longDescription: "Built a comprehensive e-commerce platform featuring user authentication, product catalog, shopping cart, payment integration, and admin dashboard. The platform handles thousands of products and users with optimal performance and security.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com",
-      category: "Web Development"
+      title: "Stratos - Intelligent Weather Application",
+      description: "Advanced Android weather app with AI-powered sky analysis and smart forecasting",
+      longDescription: "Built a next-generation weather application featuring real-time forecasting, offline capabilities, and intelligent sky analysis. The app uses Google Gemini API to analyze cloud patterns and atmospheric conditions, providing users with highly accurate weather predictions. Includes location tracking, data caching, and a modern Material Design interface.",
+      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=500&h=300&fit=crop",
+      technologies: ["Kotlin", "Jetpack Compose", "MVVM", "Machine Learning", "REST APIs", "Room Database", "WorkManager"],
+      githubUrl: "https://github.com/uchihaitachi56/Stratos",
+      liveUrl: "#",
+      category: "App Development"
     },
     {
-      title: "AI-Powered Analytics Dashboard",
-      description: "Machine learning dashboard for data visualization and predictive analytics",
-      longDescription: "Developed an intelligent analytics dashboard that processes large datasets and provides actionable insights through machine learning algorithms. Features real-time data visualization, predictive modeling, and automated reporting.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop",
-      technologies: ["Python", "TensorFlow", "React", "D3.js", "FastAPI"],
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com",
+      title: "GeoAI Reimagined",
+      description: "Award-winning geospatial AI solution for disaster management and environmental monitoring",
+      longDescription: "Developed cutting-edge deep learning models for comprehensive geospatial analysis including flood detection, crop monitoring, and disaster response. Achieved exceptional 94.8% accuracy across multiple classification tasks. This project secured Global Runner-up position at NASA SpaceApps Challenge, competing against 155,000 participants worldwide.",
+      image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=500&h=300&fit=crop",
+      technologies: ["Deep Learning", "Transfer Learning", "Image Segmentation", "PyTorch", "Computer Vision"],
+      githubUrl: "https://github.com/uchihaitachi56/Iitiansindenorth",
+      liveUrl: "#",
       category: "Machine Learning"
     },
     {
-      title: "Mobile Fitness App",
-      description: "Cross-platform mobile app for fitness tracking and workout planning",
-      longDescription: "Created a comprehensive fitness application with workout planning, progress tracking, social features, and AI-powered recommendations. The app supports offline functionality and syncs across multiple devices.",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop",
-      technologies: ["React Native", "Firebase", "Redux", "Node.js"],
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com",
-      category: "Mobile Development"
-    },
-    {
-      title: "Design System Library",
-      description: "Comprehensive design system and component library for consistent UX",
-      longDescription: "Architected and developed a complete design system with reusable components, design tokens, and documentation. Used by multiple teams to ensure consistency across all digital products.",
-      image: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=500&h=300&fit=crop",
-      technologies: ["React", "Storybook", "TypeScript", "Figma", "CSS"],
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com",
-      category: "Design System"
-    },
-    {
-      title: "Real-time Chat Platform",
-      description: "Scalable messaging platform with real-time communication features",
-      longDescription: "Built a modern chat platform supporting real-time messaging, file sharing, video calls, and team collaboration. Features end-to-end encryption and handles thousands of concurrent users.",
-      image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=500&h=300&fit=crop",
-      technologies: ["Socket.io", "React", "Node.js", "Redis", "WebRTC"],
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com",
-      category: "Web Development"
-    },
-    {
-      title: "Blockchain Voting System",
-      description: "Secure and transparent voting system built on blockchain technology",
-      longDescription: "Developed a decentralized voting system ensuring transparency, security, and immutability. Features smart contracts, voter verification, and real-time result tracking with complete audit trails.",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=500&h=300&fit=crop",
-      technologies: ["Solidity", "Web3.js", "React", "Ethereum", "IPFS"],
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com",
-      category: "Blockchain"
+      title: "Railway Track Inspection Bot",
+      description: "Cost-effective IoT solution for automated railway infrastructure monitoring",
+      longDescription: "Led a 6-member engineering team to develop an intelligent crack detection system for railway safety. Implemented custom YOLOv8 computer vision model with sensor fusion technology using Arduino and Raspberry Pi. The system achieves 92% detection accuracy while maintaining costs under ₹30,000, making it highly scalable for real-world deployment.",
+      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=500&h=300&fit=crop",
+      technologies: ["Computer Vision", "Machine Learning", "Arduino", "Raspberry Pi", "YOLOv8", "IoT"],
+      githubUrl: "https://github.com/uchihaitachi56/Railway-Track-Inspection",
+      liveUrl: "#",
+      category: "Computer Vision"
     }
   ];
 
@@ -139,7 +109,7 @@ const Projects = () => {
             className="bg-gradient-primary hover:shadow-neon transition-all duration-300"
             asChild
           >
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/uchihaitachi56" target="_blank" rel="noopener noreferrer">
               View All Projects on GitHub
             </a>
           </Button>

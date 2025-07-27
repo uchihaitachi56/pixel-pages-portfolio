@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, X } from "lucide-react";
+import { Github, X } from "lucide-react";
 
 interface Project {
   title: string;
@@ -110,24 +110,16 @@ const ProjectBook = ({ project, index }: ProjectBookProps) => {
                     className="w-full h-64 object-cover rounded-lg mb-4"
                   />
                   
-                  <div className="flex gap-4 mb-4">
-                    {project.githubUrl && (
+                  {project.githubUrl && (
+                    <div className="mb-4">
                       <Button size="sm" variant="outline" asChild>
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                           <Github className="w-4 h-4 mr-2" />
-                          Code
+                          View Code
                         </a>
                       </Button>
-                    )}
-                    {project.liveUrl && (
-                      <Button size="sm" asChild>
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Live Demo
-                        </a>
-                      </Button>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
 
                 <div>

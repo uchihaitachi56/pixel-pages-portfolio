@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
 import { toast } from "sonner";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,14 +14,39 @@ const Contact = () => {
     subject: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    toast("Message sent successfully! I'll get back to you soon.", {
-      description: "Thank you for reaching out!",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      // Using environment variables for security
+      const result = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      console.log('Email sent successfully:', result);
+      toast("Message sent successfully! I'll get back to you soon.", {
+        description: "Thank you for reaching out!",
+      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast("Failed to send message. Please try again.", {
+        description: "There was an error sending your message.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -34,20 +60,20 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       label: "Email",
-      value: "john.doe@example.com",
-      href: "mailto:john.doe@example.com"
+      value: "goyalbhavi67@gmail.com",
+      href: "mailto:goyalbhavi67@gmail.com"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+91 98567-00567",
+      href: "tel:+919856700567"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       label: "Location",
-      value: "San Francisco, CA",
-      href: "https://maps.google.com/?q=San Francisco, CA"
+      value: "Punjab, India",
+      href: "https://maps.google.com/?q=Punjab,India"
     }
   ];
 
@@ -55,21 +81,15 @@ const Contact = () => {
     {
       icon: <Github className="w-6 h-6" />,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/uchihaitachi56",
       color: "hover:text-gray-400"
     },
     {
       icon: <Linkedin className="w-6 h-6" />,
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/bhavesh-goyal-b96547264/",
       color: "hover:text-blue-400"
     },
-    {
-      icon: <Twitter className="w-6 h-6" />,
-      label: "Twitter",
-      href: "https://twitter.com",
-      color: "hover:text-blue-400"
-    }
   ];
 
   return (
@@ -151,9 +171,10 @@ const Contact = () => {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full bg-gradient-primary hover:shadow-neon transition-all duration-300"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-primary hover:shadow-neon transition-all duration-300 disabled:opacity-50"
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </Card>
