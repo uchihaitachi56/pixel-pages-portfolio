@@ -84,62 +84,70 @@ const ProjectBook = ({ project, index }: ProjectBookProps) => {
 
       {/* Book Detail Modal */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <Card className="w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-card/95 backdrop-blur-lg">
-            <div className="p-8">
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+          onClick={() => setIsOpen(false)}
+        >
+          <div 
+            className="bg-background rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-6 md:p-8">
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h2 className="text-3xl font-bold mb-2">{project.title}</h2>
-                  <Badge className="mb-4">{project.category}</Badge>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-2">{project.title}</h2>
+                  <Badge className="mb-0">{project.category}</Badge>
                 </div>
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => setIsOpen(false)}
-                  className="hover:bg-destructive hover:text-destructive-foreground"
+                  className="hover:bg-destructive hover:text-destructive-foreground flex-shrink-0"
                 >
                   <X className="w-4 h-4" />
                 </Button>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div className="space-y-4">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-64 object-cover rounded-lg mb-4"
+                    className="w-full h-48 md:h-64 object-cover rounded-lg"
                   />
                   
                   {project.githubUrl && (
-                    <div className="mb-4">
-                      <Button size="sm" variant="outline" asChild>
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="w-4 h-4 mr-2" />
-                          View Code
-                        </a>
-                      </Button>
-                    </div>
+                    <Button size="sm" variant="outline" asChild className="w-full">
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-2" />
+                        View Code
+                      </a>
+                    </Button>
                   )}
                 </div>
 
-                <div>
-                  <h3 className="text-xl font-semibold mb-4">About This Project</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {project.longDescription}
-                  </p>
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-3">About This Project</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {project.longDescription}
+                    </p>
+                  </div>
 
-                  <h3 className="text-xl font-semibold mb-4">Technologies Used</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, i) => (
-                      <Badge key={i} variant="secondary">
-                        {tech}
-                      </Badge>
-                    ))}
+                  <div>
+                    <h3 className="text-xl font-semibold mb-3">Technologies Used</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, i) => (
+                        <Badge key={i} variant="secondary">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </Card>
+          </div>
         </div>
       )}
     </>

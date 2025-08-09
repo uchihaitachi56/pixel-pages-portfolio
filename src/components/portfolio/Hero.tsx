@@ -8,14 +8,21 @@ const Hero = () => {
   const fullText = "Software Engineer & AI Developer";
 
   useEffect(() => {
-    if (currentIndex < fullText.length) {
-      const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + fullText[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
-      }, 100);
-      return () => clearTimeout(timeout);
-    }
-  }, [currentIndex, fullText]);
+  if (currentIndex < fullText.length) {
+    const timeout = setTimeout(() => {
+      setDisplayText(prev => prev + fullText[currentIndex]);
+      setCurrentIndex(prev => prev + 1);
+    }, 100);
+    return () => clearTimeout(timeout);
+  } else {
+    // Wait 2 seconds before restarting
+    const resetTimeout = setTimeout(() => {
+      setDisplayText("");
+      setCurrentIndex(0);
+    }, 2000);
+    return () => clearTimeout(resetTimeout);
+  }
+}, [currentIndex, fullText]);
 
   const scrollToNext = () => {
     const aboutSection = document.getElementById('about');
